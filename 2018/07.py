@@ -1,4 +1,5 @@
 # with open('test_input07.txt') as f:
+import string
 with open('input07.txt') as f:
     lines = f.readlines()
 
@@ -49,7 +50,6 @@ while len(candidates):
 print('order', completed)
 
 # Part II
-import string
 
 conditions = []
 candidates = []
@@ -63,8 +63,10 @@ t_extra = 0
 n_workers = 5
 t_extra = 60
 
+
 def letter_cost(letter, t_extra):
     return string.ascii_uppercase.rindex(letter)+1+t_extra
+
 
 workers_free_in = [0 for n in range(n_workers)]
 workers_current_letter = ['' for n in range(n_workers)]
@@ -111,11 +113,11 @@ while len(completed) < len(letters):
             candidate = sorted(candidates)[0]
             if candidate not in workers_current_letter:
                 workers_current_letter[w] = sorted(candidates)[0]
-                workers_free_in[w] = letter_cost(workers_current_letter[w], t_extra)
+                workers_free_in[w] = letter_cost(
+                    workers_current_letter[w], t_extra)
 
         if workers_free_in[w] > 0:
             workers_free_in[w] -= 1
-
 
     time += 1
 
