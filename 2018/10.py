@@ -7,7 +7,7 @@ vx = []
 vy = []
 
 with open('input10.txt') as f:
-# with open('test_input10.txt') as f:
+    # with open('test_input10.txt') as f:
     lines = f.readlines()
 
 
@@ -28,7 +28,7 @@ vy = np.array(vy)
 maxx = 10000
 best_t = 0
 
-for t in range(10300,10500):
+for t in range(10300, 10500):
     xt = x+t*vx
     yt = y+t*vy
 

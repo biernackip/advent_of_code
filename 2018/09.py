@@ -33,6 +33,7 @@ skip_marble = 23
 player_scores = [0 for x in range(n_players)]
 marble_array = []
 
+
 def play_game(max_players, last_marble):
     scores = collections.defaultdict(int)
     circle = collections.deque([0])
@@ -47,5 +48,6 @@ def play_game(max_players, last_marble):
             circle.append(marble)
 
     return max(scores.values()) if scores else 0
+
 
 print(play_game(n_players, n_marbles))
